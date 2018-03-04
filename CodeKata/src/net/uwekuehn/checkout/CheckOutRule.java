@@ -5,38 +5,11 @@ package net.uwekuehn.checkout;
  * 
  * @author uwe.kuehn
  */
-public class CheckOutRule {
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getMinimumPieces() {
-		return minimumPieces;
-	}
-
-	public void setMinimumPieces(int minimumPieces) {
-		this.minimumPieces = minimumPieces;
-	}
-
-	public double getFullPrice() {
-		return fullPrice;
-	}
-
-	public void setFullPrice(double fullPrice) {
-		this.fullPrice = fullPrice;
-	}
-
-	private String name;
-	private int minimumPieces;
-	private double fullPrice;
-
+public class CheckOutRule extends Rule {
 	/**
 	 * no default constructor need
 	 */
+	@SuppressWarnings("unused")
 	private CheckOutRule(){}
 	
 	/**
@@ -101,5 +74,15 @@ public class CheckOutRule {
 		returnValue = fullPrice / minimumPieces;
 		
 		return returnValue;
+	}
+	
+	/**
+	 * identify if this rule counts 
+	 * 
+	 * @param currentPiecesAmount
+	 * @return
+	 */
+	public boolean getRuleCounts(int currentPiecesAmount){
+		return (currentPiecesAmount >= this.minimumPieces);
 	}
 }
