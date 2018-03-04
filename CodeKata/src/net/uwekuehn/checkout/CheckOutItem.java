@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * is similar to an entry in articles data 
+ * if existing it is 1 piece inside
  * 
  * @author uwe.kuehn
  *
@@ -12,19 +13,37 @@ public class CheckOutItem<T extends Rule> extends Article {
 	private int checkOutAmount = 1;	
 	private ArrayList<T> checkOutRules = null; 
 	
+	/**
+	 * initializes within 1 piece of an article
+	 * 
+	 * @param name
+	 * @param price
+	 */
 	public CheckOutItem(String name, double price) {
 		super(name, price);
 		this.checkOutRules = new ArrayList<T>();
 	}
 
+	/**
+	 * increment pieces by one
+	 */
 	public void addCheckOutItem(){
 		this.setCheckOutAmount(this.getCheckOutAmount() + 1);
 	}
 	
+	/**
+	 * increment pieces by given value
+	 * please note: take care negative values 
+	 * @param amountToAdd
+	 */
 	public void addCheckOutItem(int amountToAdd){
 		this.setCheckOutAmount(this.getCheckOutAmount() + amountToAdd);
 	}
 	
+	/**
+	 * adds any Rule to this CheckOutItem
+	 * @param t
+	 */
 	public void addCheckOutRule(T t){
 		this.checkOutRules.add(t);
 	}

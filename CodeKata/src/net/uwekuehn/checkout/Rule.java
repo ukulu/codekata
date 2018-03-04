@@ -1,5 +1,10 @@
 package net.uwekuehn.checkout;
 
+/**
+ * abstract class Rule
+ * 
+ * @author uwe.kuehn
+ */
 public abstract class Rule {
 	public String getName() {
 		return name;

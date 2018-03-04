@@ -13,6 +13,12 @@ public class Article {
 	@SuppressWarnings("unused")
 	private Article(){}
 	
+	/**
+	 * initializing constructor 
+	 * 
+	 * @param name
+	 * @param price
+	 */
 	public Article(String name, double price){
 		this.name = name;
 		this.price = price;

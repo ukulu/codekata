@@ -2,17 +2,31 @@ package net.uwekuehn.checkout;
 
 import java.util.HashMap;
 
+/**
+ * manage the basket for one instance
+ * 
+ * @author uwe.kuehn
+ *
+ */
 public class CheckOut {
 	
 	private HashMap<String, CheckOutItem<Rule>> basket = null;
 	
+	/**
+	 * default constructor
+	 */
 	public CheckOut(){
 		this.basket = new HashMap<String, CheckOutItem<Rule>>();
 	}
 	
+	/**
+	 * adds an CheckoutItem to basket
+	 * 
+	 * @param scanned
+	 */
 	public void scanArticle(CheckOutItem<Rule> scanned){
 		if(basket.containsKey(scanned.name)){
-			basket.get(scanned.name).addCheckOutItem();
+			basket.get(scanned.name).addCheckOutItem(scanned.getCheckOutAmount());
 		}
 		else{
 			basket.put(scanned.name, scanned);
