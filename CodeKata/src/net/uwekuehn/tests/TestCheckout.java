@@ -4,6 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ *  all test cases for test code 
+ * 
+ * @author uwe.kuehn
+ *
+ */
 public class TestCheckout {
 
 	@Test
